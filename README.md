@@ -17,6 +17,17 @@ Also if movie not found then "Not found" message will occur
 
 ## How to run the project?
 
+OPTION 1:
+1. Clone or download this repository to your local machine.
+2. Open your terminal/command prompt from your project directory and install all the libraries mentioned in the [requirements.txt] bu executing the command
+   `pip install -r requirements.txt` (if OS ERROR occurs try using `pip install --user -r requirements.txt`)
+3. In the same terminal/command prompt from your project directory and run the file `app.py` by executing the command `python app.py`.
+4. Wait for sometime.
+5. Go to your browser and type `http://127.0.0.1:8000/` in the address bar. 
+6. Page is loading.
+7. Hurray! That's it.
+
+OPTION 2:
 1. Clone or download this repository to your local machine.
 2. Open the folder in VSCode, you get some dialog box relating to Pylance just close it or click output till it disappears (it will disappear definitely) 
 3. Open the terminal, install all the libraries mentioned in the [requirements.txt] file with the command `pip install -r requirements.txt` .
