@@ -1,0 +1,57 @@
+#np_title {
+    text-align: center;
+}
+
+#np_img {
+    height: 70vh;
+    width: 60vh;
+}
+
+#np_img_plus_content {
+    display: flex;
+}
+
+#np_content {
+    margin: 5px;
+}
+
+#np_btn a {
+    text-decoration: none;
+    color: black;
+}
+
+#np_btn {
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+#np_btn:hover {
+    background-color: rgb(132, 128, 128);
+    color: white;
+    cursor: pointer;
+}
+
+#np_btn:hover a {
+    background-color: rgb(132, 128, 128);
+    color: white;
+    cursor: pointer;
+}
+
+#np_title {
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+#notfound{
+    text-align: center;
+}

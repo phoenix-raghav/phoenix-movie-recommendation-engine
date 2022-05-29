@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{obj.name}}</title>
+    <link rel="stylesheet" href="../static/style1.css">
+    <style>
+        body {
+            background-color: rgb(60, 48, 48);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="np_btn"><a href="/" type="button">Home</a></button>
+    <h1 id="np_title">{{obj.name}}</h1>
+    <div id="np_img_plus_content">
+        <img id="np_img" src={{obj.add}} alt="Error">
+        <div id="np_content">
+            <h1 id="np_genres">Genres: {{obj.genres}}</h1>
+            <h1 id="np_genres">Top Cast: {{obj.cast}}</h1>
+            <h1 id="np_genres">Director: {{obj.crew}}</h1>
+        </div>
+    </div>
+    <p id="notfound"></p>
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script>
+        name = document.getElementById('np_title').innerHTML
+
+        if (name != "NotFound") {
+            name = name.replace(/&amp;/g, "&") 
+            name = name.toUpperCase()
+            document.addEventListener("DOMContentLoaded", () => {
+                const start = new Date().getTime();
+                window.addEventListener("beforeunload", () => {
+                    const end = new Date().getTime();
+                    const totalTime = (end - start) / 1000
+                    const t = { name, totalTime }
+                    const s = JSON.stringify(t)
+                    $.ajax({
+                        url: "/",
+                        type: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify(s)
+                    });
+                });
+            });
+        }
+        else {
+            document.getElementById('np_img_plus_content').style.display = "none";
+            document.getElementById('np_title').innerHTML = "Sorry Not Found";
+            document.getElementById('notfound').innerHTML = "Sorry, the movie you are looking for is not in our database";
+        }
+    </script>
+</body>
+
+</html>

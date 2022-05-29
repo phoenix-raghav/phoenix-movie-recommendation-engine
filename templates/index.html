@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- **************FONT AWESOME**************** -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- **************BOOTSTRAP**************** -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+    <style>
+        body {
+            background-color: rgb(60, 48, 48);
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navb">
+        <div class="container-fluid">
+            <a class="navbar-brand colour" href="#">PHOENIX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active colour" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link colour" href="/">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link colour" href="/">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link colour" href="/">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="search_area">
+        <div id="title_heading">
+            <h1 id="phoenix">PHOENIX</h1>
+            <h1 id="movie_recommendor">MOVIE RECOMMENDOR</h1>
+        </div>
+        <div id="search_box">
+            <input type="text" name="movie" id="autocomplete" onkeyup="stoppedTyping()" placeholder="Enter movie name">
+            <button type="submit" id="btn" class="buttons" onclick="geturl()" disabled>Recommend</button>
+        </div>
+
+    </div>
+
+    <div id="recommendations" class="blocks">
+        <h1 id="recommended_heading" class="heading">RECOMMENDED</h1>
+        <div class="tiles" id="recommended_tiles">
+            {% for i in obj_recom.recom %}
+            <div class="tile">
+                <div id="tile_img">
+                    <a id="tile_name_tag" href="/movie/{{i.name}}">
+                        <img id="tile_img_tag" src={{i.add}} alt="Error">
+                    </a>
+                    <div class="middle">
+                        <div class="text">Watch</div>
+                    </div>
+                </div>
+                <div id="tile_name">
+                    <a id="tile_name_tag" href="/movie/{{i.name}}">{{i.name}}</a>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="comedy" class="blocks">
+        <h1 id="comedy_heading" class="heading">COMEDY</h1>
+        <div class="tiles" id="comedy_tiles">
+            {% for i in obj_recom.comedy %}
+            <div class="tile">
+                <div id="tile_img">
+                    <a id="tile_name_tag" href="/movie/{{i.name}}">
+                        <img id="tile_img_tag" src={{i.add}} alt="Error">
+                    </a>
+                    <div class="middle">
+                        <div class="text">Watch</div>
+                    </div>
+                </div>
+                <div id="tile_name">
+                    <a id="tile_name_tag" href="/movie/{{i.name}}">{{i.name}}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="action" class="blocks">
+        <h1 id="action_heading" class="heading">ACTION</h1>
+        <div class="tiles" id="action_tiles">
+            {% for i in obj_recom.action %}
+            <div class="tile">
+                <div id="tile_img">
+                    <a id="tile_name_tag" href="/movie/{{i.name}}">
+                        <img id="tile_img_tag" src={{i.add}} alt="Error">
+                    </a>
+                    <div class="middle">
+                        <div class="text">Watch</div>
+                    </div>
+                </div>
+                <div id="tile_name">
+                    <a id="tile_name_tag" href="/movie/{{i.name}}">{{i.name}}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <div id="userquery">
+            <h1 id="contact">For any query please contact:</h1>
+            <div id="query_form">
+                <input type="email" name="data" id="query" onkeyup="stoppedTypingquery()" placeholder="Enter your email">
+                <button type="submit" id="query_btn" class="buttons" onclick="getQuery()" disabled>SEND</button>
+                <p id="queryresponse"></p>
+            </div>
+        </div>
+
+        <div id="socialmedia">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-skype"></a>
+        </div>
+    </footer>
+
+
+    <!-- **************BOOTSTRAP**************** -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+
+    <!-- **************JQUERY**************** -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    
+    <script src="../static/js_for_index.js"></script>
+</body>
+
+</html>
