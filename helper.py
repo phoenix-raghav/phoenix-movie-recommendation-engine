@@ -8,6 +8,7 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+pd.options.mode.chained_assignment = None
 
 # Reading data from csv file
 movies=pd.read_csv('data.csv')
