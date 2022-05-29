@@ -18,12 +18,14 @@ Also if movie not found then "Not found" message will occur
 ## How to run the project?
 
 1. Clone or download this repository to your local machine.
-2. Install all the libraries mentioned in the [requirements.txt] file with the command `pip install -r requirements.txt`
-4. Open your terminal/command prompt from your project directory and run the file `app.py` by executing the command `python app.py`.
-5. Wait for sometime.
-6. Go to your browser and type `http://127.0.0.1:8000/` in the address bar. 
-7. Page is loading.
-8. Hurray! That's it.
+2. Open the folder in VSCode, you get some dialog box relating to Pylance just close it or click output till it disappears (it will disappear definitely) 
+3. Open the terminal, install all the libraries mentioned in the [requirements.txt] file with the command `pip install -r requirements.txt` .
+4. Intalling collected packages takes time at last.
+5. In the terminal of VSCode run the file `app.py` by executing the command `(python .\app.py)`.
+6. Wait for sometime.
+7. Go to your browser and type `http://127.0.0.1:8000/` in the address bar. 
+8. Page is loading.
+9. Hurray! That's it.
                                      
 ## How the application searches the most similar movies to the item watched by user?
    Firstly, a vectorization process starts where every movie gets plotted on a coordinate system based on text details.
