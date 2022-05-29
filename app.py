@@ -145,7 +145,6 @@ def movie(movie):
 
     else:
         idx=get_idx(movie)
-        print(get_director(idx))
         obj= merge_n_a_gen_cast_crew(movie,fetch_poster(get_id(idx)),get_genres(idx),get_cast(idx),get_director(idx))  
         return render_template('movie.html',obj=obj)  
     
