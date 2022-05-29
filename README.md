@@ -2,7 +2,6 @@
 
 ## Made by Raghav Agarwal
 
-##Overview
 This is a movie recommendation engine which acts like Netflix and Spotify
 
 Github Link : https://github.com/phoenix-raghav/phoenix-movie-recommendation-engine
