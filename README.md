@@ -19,11 +19,12 @@ Also if movie not found then "Not found" message will occur
 
 OPTION 1:
 1. Clone or download this repository to your local machine.
-2. Open your terminal/command prompt from your project directory and install all the libraries mentioned in the [requirements.txt] bu executing the command
+2. Open your terminal/command prompt from your project directory and install all the libraries mentioned in the [requirements.txt] executing the command
    `pip install -r requirements.txt` (if OS ERROR occurs try using `pip install --user -r requirements.txt`)
-3. In the same terminal/command prompt from your project directory and run the file `app.py` by executing the command `python app.py`.
-4. Wait for sometime.
-5. Go to your browser and type `http://127.0.0.1:8000/` in the address bar. 
+    (May be intalling collected packages takes time at last)
+3. In the same terminal/command prompt from your project directory run the file `app.py` by executing the command `python .\app.py`.
+4. Wait for sometime you will get the link. 
+5. Click on the link `http://127.0.0.1:8000/`.
 6. Page is loading.
 7. Hurray! That's it.
 
@@ -33,8 +34,8 @@ OPTION 2:
 3. Open the terminal, install all the libraries mentioned in the [requirements.txt] file with the command `pip install -r requirements.txt` .
 4. Intalling collected packages takes time at last.
 5. In the terminal of VSCode run the file `app.py` by executing the command `(python .\app.py)`.
-6. Wait for sometime.
-7. Go to your browser and type `http://127.0.0.1:8000/` in the address bar. 
+6. Wait for sometime you will get the link.
+7. Click on the link `http://127.0.0.1:8000/`.
 8. Page is loading.
 9. Hurray! That's it.
                                      
